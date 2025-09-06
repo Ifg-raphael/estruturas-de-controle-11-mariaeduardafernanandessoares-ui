@@ -1,18 +1,24 @@
-# 3 entradas (a, b e c) e 1 saida (tipo de triangulo).
+# 3 entradas  e 1 saida (tipo de triangulo).
 
-a = int(input("digite o primeiro valor: "))
-b = int(input("digite o segundo valor: "))
-c = int(input("digite o terceiro valor: "))
+lados = input("digite os lados do triangulos: ")
+
+lados_em_texto = lados.split()
+
+lados_do_triangulo = []
+
+for i in lados_em_texto:
+    lado_convertido = float(i)
+    lados_do_triangulo.append(lado_convertido)
 
 
-if a == b == c : # fluxo para triangulo equilatero
+if lados_do_triangulo[0] == lados_do_triangulo[1] == lados_do_triangulo[2]:
     print("equilátero")
-
-elif a == b or b == c or c == a : # fluxo para triangulo isoceles
+    
+elif lados_do_triangulo[0] == lados_do_triangulo[1] or lados_do_triangulo[2] == lados_do_triangulo[1] or lados_do_triangulo[2] == lados_do_triangulo[0]:
     print("isósceles")
 
-elif a != b and a != c and c != b : 
+elif lados_do_triangulo[0] != lados_do_triangulo[1] and lados_do_triangulo[0] != lados_do_triangulo[2] and lados_do_triangulo[1] != lados_do_triangulo[2]:
     print("escaleno")
 
 else:
-    print("não forma triangulo")
+    print("Não forma triângulo")
